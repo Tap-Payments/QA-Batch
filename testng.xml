@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="false">
+    <listeners>
+        <listener class-name="com.tappayments.automation.config.ExtentReportSetup"/>
+    </listeners>
+
+    <!-- Test Suite for Internal Authentication -->
+    <test name="QA Authentication Cases - Internal Auth" verbose="2" preserve-order="true">
+        <classes>
+            <class name="com.tappayments.automation.qabatch.cases.CreatePresignedUrl"/>
+            <class name="com.tappayments.automation.qabatch.cases.GetBatchStatus"/>
+            <class name="com.tappayments.automation.qabatch.cases.GetFileList"/>
+            <class name="com.tappayments.automation.qabatch.cases.DownloadInputFile"/>
+            <class name="com.tappayments.automation.qabatch.cases.DownloadResultFile"/>
+        </classes>
+    </test>
+</suite>
