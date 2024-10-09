@@ -28,5 +28,5 @@ jobs:
         run: |
           echo "<settings><servers><server><id>github</id><username>${{ github.actor }}</username><password>${{ secrets.GITHUB_TOKEN }}</password></server></servers></settings>" > ~/.m2/settings.xml
 
-      - name: Run Rest Assured Test Cases
-        run: mvn clean test
+      - name: Run Rest Assured Test Cases with Debug Logging
+        run: mvn clean test -X
