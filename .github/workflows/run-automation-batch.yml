@@ -28,6 +28,10 @@ jobs:
         run: |
           echo "<settings><servers><server><id>github</id><username>${{ github.actor }}</username><password>${{ secrets.GITHUB_TOKEN }}</password></server></servers></settings>" > ~/.m2/settings.xml
 
+      # Create the report directory if it does not exist
+      - name: Create report folder
+        run: mkdir -p extent.reports
+
       - name: Run Rest Assured Test Cases
         run: mvn clean test
 
@@ -37,3 +41,9 @@ jobs:
         with:
           name: extent-reports
           path: ./extent.reports/  # Update this path if your reports are stored elsewhere
+
+      - name: List files in root folder (for debugging)
+        run: ls -alh
+
+      - name: List files in extent.reports folder (for debugging)
+        run: ls -alh extent.reports/
