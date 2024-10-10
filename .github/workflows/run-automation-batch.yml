@@ -35,6 +35,10 @@ jobs:
       - name: Run Rest Assured Test Cases
         run: mvn clean test -X  # Enable Maven debug output for more details
 
+      # Debugging step to list all files in the workspace
+      - name: List all files in the workspace (for debugging)
+        run: find . -type f
+
       # Upload Surefire test reports for debugging
       - name: Upload Surefire Reports
         if: always()  # Run this step even if the tests fail
