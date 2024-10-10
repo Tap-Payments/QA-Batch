@@ -35,14 +35,6 @@ jobs:
       - name: Run Rest Assured Test Cases
         run: mvn clean test #-X  # Enable Maven debug output for more details
 
-      # Upload Surefire test reports for debugging
-      - name: Upload Surefire Reports
-        if: always()  # Run this step even if the tests fail
-        uses: actions/upload-artifact@v3
-        with:
-          name: surefire-reports
-          path: target/surefire-reports/
-
       - name: Archive TestNG Reports
         if: always()  # This ensures the step runs even if the tests fail
         uses: actions/upload-artifact@v3
