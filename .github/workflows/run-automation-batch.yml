@@ -33,23 +33,11 @@ jobs:
         run: mkdir -p extent.reports
 
       - name: Run Rest Assured Test Cases
-        run: mvn clean test -X  # Enable Maven debug output for more details
-
-      # Debugging step to list all files in the workspace
-      - name: List all files in the workspace (for debugging)
-        run: find . -type f
-
-      # Upload Surefire test reports for debugging
-      - name: Upload Surefire Reports
-        if: always()  # Run this step even if the tests fail
-        uses: actions/upload-artifact@v3
-        with:
-          name: surefire-reports
-          path: target/surefire-reports/
+        run: mvn clean test #-X  Enable Maven debug output for more details
 
       - name: Archive TestNG Reports
         if: always()  # This ensures the step runs even if the tests fail
         uses: actions/upload-artifact@v3
         with:
           name: extent-reports
-          path: ./extent.reports/  # Update this path if your reports are stored elsewhere
+          path: ./QA-Automation-Report/  # Update this path if your reports are stored elsewhere
