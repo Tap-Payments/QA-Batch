@@ -41,9 +41,3 @@ jobs:
         with:
           name: extent-reports
           path: ./extent.reports/  # Update this path if your reports are stored elsewhere
-
-      - name: List files in root folder (for debugging)
-        run: ls -alh
-
-      - name: List files in extent.reports folder (for debugging)
-        run: ls -alh extent.reports/

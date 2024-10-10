@@ -37,7 +37,6 @@ build/
 ### Mac OS ###
 .DS_Store
 /.idea
-/extent.reports
 src/main/resources/upload-bulk-invoice-1.csv
 src/main/resources/upload-bulk-invoice-2.csv
 src/main/resources/upload-bulk-invoice-3.csv
