@@ -33,7 +33,7 @@ jobs:
         run: mkdir -p extent.reports
 
       - name: Run Rest Assured Test Cases
-        run: mvn clean test -X  Enable Maven debug output for more details
+        run: mvn clean test -X  # Enable Maven debug output for more details
 
       # Debugging step to list all files in the workspace
       - name: List all files in the workspace (for debugging)
